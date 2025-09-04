@@ -1062,30 +1062,31 @@
                 </div>
 
                 <div class="user-menu">
-                    <img src="{{ Auth::user()->profile_photo_url ?? 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&color=FFFFFF&background=2B8C8C' }}"
-                         alt="User" class="user-avatar">
-                    <div class="user-info">
-                        <span class="user-name">{{ Auth::user()->name }}</span>
-                        <span class="user-role">Administrator</span>
-                    </div>
+    <img src="{{ Auth::user()->profile_photo_url }}"
+         alt="User" class="user-avatar">
+    <div class="user-info">
+        <span class="user-name">{{ Auth::user()->name }}</span>
+        <span class="user-role">Administrator</span>
+    </div>
 
-                    <div class="dropdown-menu">
-                        <a href="{{ route('profile.show') }}" class="dropdown-item">
-                            <i class="fas fa-user-circle"></i> My Profile
-                        </a>
-                        <a href="{{ route('profile.edit') }}" class="dropdown-item">
-                            <i class="fas fa-cog"></i> Settings
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <a href="{{ route('logout') }}" class="dropdown-item"
-                               onclick="event.preventDefault(); this.closest('form').submit();">
-                                <i class="fas fa-sign-out-alt"></i> Log Out
-                            </a>
-                        </form>
-                    </div>
-                </div>
+    <div class="dropdown-menu">
+        <a href="{{ route('profile.show') }}" class="dropdown-item">
+            <i class="fas fa-user-circle"></i> My Profile
+        </a>
+        <a href="{{ route('profile.edit') }}" class="dropdown-item">
+            <i class="fas fa-cog"></i> Settings
+        </a>
+        <div class="dropdown-divider"></div>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a href="{{ route('logout') }}" class="dropdown-item"
+               onclick="event.preventDefault(); this.closest('form').submit();">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </a>
+        </form>
+    </div>
+</div>
+
             </nav>
         </div>
     </header>
